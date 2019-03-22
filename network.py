@@ -9,13 +9,6 @@ _B_MEAN = 103.94
 
 @slim.add_arg_scope
 def atrous_spatial_pyramid_pooling(net, scope, depth=256, reuse=None):
-    """
-    ASPP consists of (a) one 1×1 convolution and three 3×3 convolutions with rates = (6, 12, 18) when output stride = 16
-    (all with 256 filters and batch normalization), and (b) the image-level features as described in https://arxiv.org/abs/1706.05587
-    :param net: tensor of shape [BATCH_SIZE, WIDTH, HEIGHT, DEPTH]
-    :param scope: scope name of the aspp layer
-    :return: network layer with aspp applyed to it.
-    """
 
     with tf.variable_scope(scope, reuse=reuse):
         feature_map_size = tf.shape(net)

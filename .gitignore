@@ -1,0 +1,4 @@
+*/*.pyc
+*.pyc
+serving/tboard_logs/
+serving/versions/
